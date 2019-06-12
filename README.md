@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+$ bundle exec 
+$ bundle exec rake db:create
+$ bundle exec rake db:migrate
 
-Things you may want to cover:
+$ rails s -p 3000
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# copy your recpatcha key to `.env.local`
+https://www.google.com/u/1/recaptcha/admin/create
