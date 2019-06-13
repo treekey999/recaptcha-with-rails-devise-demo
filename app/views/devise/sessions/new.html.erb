@@ -21,6 +21,14 @@
   <% end %>
 
   <div class="form-group">
+    <% if @verify_v2 %>
+      <%= recaptcha_tags site_key: ENV["RECAPTCHA_V2_CHECKBOX_SITE_KEY"] %>
+    <% else %>
+      <%= recaptcha_v3 action: 'login', site_key: ENV["RECAPTCHA_V3_SITE_KEY"] %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
     <%= f.submit  t('.sign_in'), class: 'btn btn-primary' %>
   </div>
 <% end %>
