@@ -21,7 +21,11 @@
   <% end %>
 
   <div class="form-group">
-    <%= recaptcha_v3 action: 'login', site_key: ENV["RECAPTCHA_V3_SITE_KEY"] %>
+    <% if @verify_v2 %>
+      <%= recaptcha_tags site_key: ENV["RECAPTCHA_V2_CHECKBOX_SITE_KEY"] %>
+    <% else %>
+      <%= recaptcha_v3 action: 'login', site_key: ENV["RECAPTCHA_V3_SITE_KEY"] %>
+    <% end %>
   </div>
 
   <div class="form-group">
